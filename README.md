@@ -1,5 +1,5 @@
 # pinterest-clone
-
+A pinterest clone using Vue, tailwind and unsplash API
 ## Project setup
 ```
 npm install
