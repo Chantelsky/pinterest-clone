@@ -20,13 +20,7 @@
       </div>
       <div class="flex-grow mx-8">
         <!--TODO: add icon in front of search, add functionality -->
-        <input
-          type="search"
-          class="bg-pinterestgray w-full p-3 rounded-full focus:outline-none focus:ring focus:border-blue-300"
-          name=""
-          id=""
-          placeholder="Search"
-        />
+        <search-bar />
       </div>
       <div class="flex items-center justify-between w-1/12 mr-3 h-10">
         <!--TODO: might need to find better icons-->
@@ -49,5 +43,11 @@
 </template>
 
 <script>
-export default {};
+import SearchBar from './SearchBar.vue';
+
+export default {
+  components: {
+    SearchBar,
+  },
+};
 </script>
