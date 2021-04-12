@@ -1,9 +1,10 @@
 <template>
-  <div id="nav">
-    <!--TODO: if user is logged in view Navbar -->
+  <div id="app">
     <nav-bar />
+    <main class="container">
+      <router-view />
+    </main>
   </div>
-  <router-view />
 </template>
 
 <script>

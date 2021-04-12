@@ -8,7 +8,7 @@
         <!--TODO: set active class to when user is on page -->
         <router-link
           class="hover:bg-pinterestgray p-3 rounded-full active:bg-black active:text-white"
-          to="/"
+          to="/home"
           >Home</router-link
         >
         <router-link
@@ -16,7 +16,6 @@
           to="/today"
           >Today</router-link
         >
-        <router-view />
       </div>
       <div class="flex-grow mx-8">
         <!--TODO: add icon in front of search, add functionality -->
