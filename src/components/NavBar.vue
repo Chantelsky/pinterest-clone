@@ -1,18 +1,20 @@
 <template>
   <div>
-    <nav class="flex items-center justify-between h-17 fixed w-full font-sans">
+    <nav class="flex items-center justify-between h-17 w-full font-sans">
       <div class="flex inital m-7">
         <img class="h-6 w-6" src="../assets/pinterest-logo.png" />
       </div>
       <div class="flex-inital text-md font-bold font-sans">
         <!--TODO: set active class to when user is on page -->
         <router-link
-          class="hover:bg-pinterestgray p-3 rounded-full active:bg-black active:text-white"
+          class="hover:bg-pinterestgray hover:text-black p-3 rounded-full"
+          active-class="bg-black text-white"
           to="/home"
           >Home</router-link
         >
         <router-link
-          class="hover:bg-pinterestgray p-3 rounded-full active:bg-black active:text-white"
+          class="hover:bg-pinterestgray hover:text-black p-3 rounded-full text-black"
+          active-class="bg-black text-white"
           to="/today"
           >Today</router-link
         >
