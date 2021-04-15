@@ -35,9 +35,12 @@
           <!--TODO : avatar upload, for now this is placeholder-->
           <img class="rounded-full h-6 w-6" src="../assets/person.png" />
         </div>
-        <div>
+        <button type="button" v-on:click.prevent="showDropDown = !showDropDown">
           <img class="h-6" src="../assets/arrow_down.svg" />
-        </div>
+          <div v-if="showDropDown">
+            <user-drop-down />
+          </div>
+        </button>
       </div>
     </nav>
   </div>
@@ -45,10 +48,17 @@
 
 <script>
 import SearchBar from './SearchBar.vue';
+import UserDropDown from './UserDropdown.vue';
 
 export default {
   components: {
     SearchBar,
+    UserDropDown,
+  },
+  data() {
+    return {
+      showDropDown: false,
+    };
   },
 };
 </script>
