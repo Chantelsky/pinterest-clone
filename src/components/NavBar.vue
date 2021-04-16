@@ -33,7 +33,9 @@
         </div>
         <div>
           <!--TODO : avatar upload, for now this is placeholder-->
-          <img class="rounded-full h-6 w-6" src="../assets/person.png" />
+          <router-link to="/userpage"
+            ><img class="rounded-full h-6 w-6" src="../assets/person.png"
+          /></router-link>
         </div>
         <button type="button" v-on:click.prevent="showDropDown = !showDropDown">
           <img class="h-6" src="../assets/arrow_down.svg" />
