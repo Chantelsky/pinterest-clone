@@ -4,6 +4,7 @@
       <div class="flex inital m-7">
         <img class="h-6 w-6" src="../assets/pinterest-logo.png" />
       </div>
+
       <div class="flex-inital text-md font-bold font-sans">
         <!--TODO: set active class to when user is on page -->
         <router-link
@@ -19,25 +20,47 @@
           >Today</router-link
         >
       </div>
+
       <div class="flex-grow mx-8">
         <!--TODO: add icon in front of search, add functionality -->
         <search-bar />
       </div>
+
       <div class="flex items-center justify-between w-1/12 mr-3 h-10">
         <!--TODO: might need to find better icons-->
+        <!-- TODO: look into webpack configuration for :src -->
         <div>
-          <img class="h-6" src="../assets/notification_icon.svg" />
+          <button
+            type="button"
+            class="hover:bg-pinterestgray hover:rounded-full p-2 focus:outline-none focus:ring focus:border-blue-300 rounded-full"
+          >
+            <img class="h-6" src="../assets/notification_icon.svg" />
+          </button>
         </div>
+
         <div>
-          <img class="h-6" src="../assets/chat_icon.svg" />
+          <button
+            type="button"
+            class="hover:bg-pinterestgray hover:rounded-full p-2 focus:outline-none focus:ring focus:border-blue-300 rounded-full"
+          >
+            <img class="h-6" src="../assets/chat_icon.svg" />
+          </button>
         </div>
+
         <div>
           <!--TODO : avatar upload, for now this is placeholder-->
           <router-link to="/userpage"
-            ><img class="rounded-full h-6 w-6" src="../assets/person.png"
+            ><img
+              class="h-10 w-10 hover:bg-pinterestgray hover:rounded-full p-2 focus:outline-none focus:ring focus:border-blue-300 rounded-full"
+              src="../assets/person.png"
           /></router-link>
         </div>
-        <button type="button" v-on:click.prevent="showDropDown = !showDropDown">
+
+        <button
+          type="button"
+          class="hover:bg-pinterestgray hover:rounded-full focus:outline-none focus:ring focus:border-blue-300 rounded-full"
+          v-on:click.prevent="showDropDown = !showDropDown"
+        >
           <img class="h-6" src="../assets/arrow_down.svg" />
           <div v-if="showDropDown">
             <user-drop-down />
