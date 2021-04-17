@@ -6,7 +6,6 @@
       </div>
 
       <div class="flex-inital text-md font-bold font-sans">
-        <!--TODO: set active class to when user is on page -->
         <router-link
           class="hover:bg-pinterestgray hover:text-black p-3 rounded-full"
           active-class="bg-black text-white"
@@ -25,16 +24,16 @@
         <!--TODO: add icon in front of search, add functionality -->
         <input
           v-model="query"
-          @keyup.enter="submit"
+          @keyup.enter.stop="submit"
           type="text"
           placeholder="Search"
           class="bg-pinterestgray w-full p-3 rounded-full focus:outline-none focus:ring focus:border-blue-300"
         />
       </div>
 
+      <!-- TODO: look into webpack configuration for :src -->
       <div class="flex items-center justify-between w-1/12 mr-3 h-10">
         <!--TODO: might need to find better icons-->
-        <!-- TODO: look into webpack configuration for :src -->
         <div>
           <button
             type="button"
@@ -94,6 +93,7 @@ export default {
     submit() {
       this.$emit('inputData', this.query);
       this.query = '';
+      this.$router.push('/home');
     },
   },
 };
