@@ -23,7 +23,13 @@
 
       <div class="flex-grow mx-8">
         <!--TODO: add icon in front of search, add functionality -->
-        <search-bar />
+        <input
+          v-model="query"
+          @keyup.enter="submit"
+          type="text"
+          placeholder="Search"
+          class="bg-pinterestgray w-full p-3 rounded-full focus:outline-none focus:ring focus:border-blue-300"
+        />
       </div>
 
       <div class="flex items-center justify-between w-1/12 mr-3 h-10">
@@ -72,18 +78,23 @@
 </template>
 
 <script>
-import SearchBar from './SearchBar.vue';
 import UserDropDown from './UserDropdown.vue';
 
 export default {
   components: {
-    SearchBar,
     UserDropDown,
   },
   data() {
     return {
       showDropDown: false,
+      query: '',
     };
+  },
+  methods: {
+    submit() {
+      this.$emit('inputData', this.query);
+      this.query = '';
+    },
   },
 };
 </script>
