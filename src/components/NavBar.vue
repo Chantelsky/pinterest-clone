@@ -38,9 +38,13 @@
           <button
             type="button"
             class="hover:bg-pinterestgray hover:rounded-full p-2 focus:outline-none focus:ring focus:border-blue-300 rounded-full"
+            v-on:click.prevent="showUpdate = !showUpdate"
           >
             <img class="h-6" src="../assets/notification_icon.svg" />
           </button>
+          <div v-if="showUpdate">
+            <updates-dropdown />
+          </div>
         </div>
 
         <div>
@@ -78,14 +82,17 @@
 
 <script>
 import UserDropDown from './UserDropdown.vue';
+import UpdatesDropdown from './UpdatesDropdown.vue';
 
 export default {
   components: {
     UserDropDown,
+    UpdatesDropdown,
   },
   data() {
     return {
       showDropDown: false,
+      showUpdate: false,
       query: '',
     };
   },

@@ -2,6 +2,7 @@
   <div class="w-screen flex flex-col items-center">
     <div class="about">
       <h3 class="text-xl font-bold text-center">{{ currentDateTime() }}</h3>
+      <!--TODO: randomise text -->
       <h1 class="text-4xl font-bold">Stay Inspired</h1>
     </div>
     <div
