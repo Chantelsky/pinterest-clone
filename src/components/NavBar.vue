@@ -43,7 +43,7 @@
             <img class="h-6" src="../assets/notification_icon.svg" />
           </button>
           <div v-if="showUpdate">
-            <updates-dropdown />
+            <updates />
           </div>
         </div>
 
@@ -82,12 +82,12 @@
 
 <script>
 import UserDropDown from './UserDropdown.vue';
-import UpdatesDropdown from './UpdatesDropdown.vue';
+import Updates from './Updates.vue';
 
 export default {
   components: {
     UserDropDown,
-    UpdatesDropdown,
+    Updates,
   },
   data() {
     return {
