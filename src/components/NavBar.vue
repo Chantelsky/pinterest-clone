@@ -32,7 +32,7 @@
       </div>
 
       <!-- TODO: look into webpack configuration for :src -->
-      <div class="flex items-center justify-between w-1/12 mr-3 h-10">
+      <div class="flex items-center justify-between w-1/12 mr-7 h-10">
         <!--TODO: might need to find better icons-->
         <div>
           <button
@@ -43,6 +43,7 @@
             <img class="h-6" src="../assets/notification_icon.svg" />
           </button>
           <div v-if="showUpdate">
+            <!-- TODO: add transition -->
             <updates />
           </div>
         </div>
@@ -51,9 +52,13 @@
           <button
             type="button"
             class="hover:bg-pinterestgray hover:rounded-full p-2 focus:outline-none focus:ring focus:border-blue-300 rounded-full"
+            v-on:click.prevent="showInbox = !showInbox"
           >
             <img class="h-6" src="../assets/chat_icon.svg" />
           </button>
+          <div v-if="showInbox">
+            <inbox />
+          </div>
         </div>
 
         <div>
@@ -83,16 +88,19 @@
 <script>
 import UserDropDown from './UserDropdown.vue';
 import Updates from './Updates.vue';
+import Inbox from './Inbox.vue';
 
 export default {
   components: {
     UserDropDown,
     Updates,
+    Inbox,
   },
   data() {
     return {
       showDropDown: false,
       showUpdate: false,
+      showInbox: false,
       query: '',
     };
   },
