@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         pinterestgray: '#EFEFEF',
+        darkgray: '#767676',
       },
     },
     screens: {

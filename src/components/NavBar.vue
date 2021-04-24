@@ -32,15 +32,17 @@
       </div>
 
       <!-- TODO: look into webpack configuration for :src -->
-      <div class="flex items-center justify-between w-1/12 mr-7 h-10">
+      <div class="flex items-center justify-between w-44 mr-7 h-10">
         <!--TODO: might need to find better icons-->
         <div>
           <button
             type="button"
-            class="hover:bg-pinterestgray hover:rounded-full p-2 focus:outline-none focus:ring focus:border-blue-300 rounded-full"
+            class="hover:bg-pinterestgray hover:text-black text-darkgray hover:rounded-full focus:text-black p-2 focus:outline-none focus:ring focus:border-blue-300 rounded-full"
             v-on:click.prevent="showUpdate = !showUpdate"
           >
-            <img class="h-6" src="../assets/notification_icon.svg" />
+            <icon-base icon-name="notification" :width="32" :height="32">
+              <icon-notification />
+            </icon-base>
           </button>
           <div v-if="showUpdate">
             <!-- TODO: add transition -->
@@ -51,10 +53,12 @@
         <div>
           <button
             type="button"
-            class="hover:bg-pinterestgray hover:rounded-full p-2 focus:outline-none focus:ring focus:border-blue-300 rounded-full"
+            class="text-darkgray p-2 hover:bg-pinterestgray hover:rounded-full focus:text-black focus:outline-none focus:ring focus:border-blue-300 rounded-full"
             v-on:click.prevent="showInbox = !showInbox"
           >
-            <img class="h-6" src="../assets/chat_icon.svg" />
+            <icon-base icon-name="chat" :width="28" :height="28">
+              <icon-chat />
+            </icon-base>
           </button>
           <div v-if="showInbox">
             <inbox />
@@ -65,17 +69,19 @@
           <!--TODO : avatar upload, for now this is placeholder-->
           <router-link to="/userpage"
             ><img
-              class="h-10 w-10 hover:bg-pinterestgray hover:rounded-full p-2 focus:outline-none focus:ring focus:border-blue-300 rounded-full"
+              class="p-2 h-10 w-auto hover:bg-pinterestgray hover:rounded-full focus:outline-none focus:ring focus:border-blue-300 rounded-full"
               src="../assets/person.png"
           /></router-link>
         </div>
 
         <button
           type="button"
-          class="hover:bg-pinterestgray hover:rounded-full focus:outline-none focus:ring focus:border-blue-300 rounded-full"
+          class="text-darkgray hover:bg-pinterestgray hover:rounded-full focus:text-black focus:outline-none focus:ring focus:border-blue-300 rounded-full"
           v-on:click.prevent="showDropDown = !showDropDown"
         >
-          <img class="h-6" src="../assets/arrow_down.svg" />
+          <icon-base icon-name="arrowdown" :width="32" :height="32">
+            <icon-arrow-down />
+          </icon-base>
           <div v-if="showDropDown">
             <user-drop-down />
           </div>
@@ -89,12 +95,20 @@
 import UserDropDown from './UserDropdown.vue';
 import Updates from './Updates.vue';
 import Inbox from './Inbox.vue';
+import IconBase from './IconBase.vue';
+import IconNotification from './icons/IconNotification.vue';
+import IconChat from './icons/IconChat.vue';
+import IconArrowDown from './icons/IconArrowDown.vue';
 
 export default {
   components: {
     UserDropDown,
     Updates,
     Inbox,
+    IconBase,
+    IconNotification,
+    IconChat,
+    IconArrowDown,
   },
   data() {
     return {
