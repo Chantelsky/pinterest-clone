@@ -30,17 +30,15 @@
         <p class="text-sm text-darkgray pb-2">Suggested</p>
         <ul>
           <li
-            v-for="firstName in firstNames"
-            :key="firstName"
-            class="flex items-center pb-3 hover:bg-pinterestgray p-1"
+            v-for="user in users"
+            :key="user.first"
+            class="flex items-center pb-3 hover:bg-pinterestgray p-"
           >
-            <img
-              :src="pictures"
-              :alt="`${firstNames}`"
-              class="rounded-full flex"
-            />
+            <img :src="`${user.picture.thumbnail}`" class="rounded-full flex" />
             <div class="pl-5 leading-none">
-              <p class="font-bold text-base">{{ firstNames }}</p>
+              <p class="font-bold text-base">
+                {{ user.name.first }} {{ user.name.last }}
+              </p>
               <span class="text-xs text-darkgray">Following</span>
             </div>
           </li>
@@ -64,14 +62,12 @@ export default {
   },
   data() {
     return {
-      firstNames: '',
-      pictures: '',
+      users: [],
     };
   },
   mounted() {
     axios.get('https://randomuser.me/api/?results=10').then((response) => {
-      this.$data.firstNames = response.data.results[0].name.first;
-      this.$data.pictures = response.data.results[0].picture.thumbnail;
+      this.$data.users = response.data.results;
       console.log(response.data);
     });
   },
