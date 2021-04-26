@@ -7,13 +7,13 @@
 
       <div class="flex-inital text-md font-bold font-sans">
         <router-link
-          class="hover:bg-pinterestgray hover:text-black p-3 rounded-full"
+          class="hover:bg-pinterestgray hover:text-black p-4 rounded-full"
           active-class="bg-black text-white"
           to="/home"
           >Home</router-link
         >
         <router-link
-          class="hover:bg-pinterestgray hover:text-black p-3 rounded-full text-black"
+          class="hover:bg-pinterestgray hover:text-black p-4 rounded-full text-black"
           active-class="bg-black text-white"
           to="/today"
           >Today</router-link

@@ -3,7 +3,6 @@
     <nav-bar @inputData="updateQuery" />
     <div class="container">
       <div v-if="$route.path.includes('/home')">
-        this is Home
         <image-card :query="childData" />
       </div>
       <div v-else>
