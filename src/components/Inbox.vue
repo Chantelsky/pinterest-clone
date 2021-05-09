@@ -5,13 +5,11 @@
     <div class="flex items-center">
       <div class="flex-grow"><p class="font-bold text-center">Inbox</p></div>
       <button class="mr-4">
-        <!-- <img class="h-10" src="../assets/menu_icon.svg" /> -->
         <icon-base icon-name="menu" :width="24" :height="24">
           <icon-menu />
         </icon-base>
       </button>
       <button>
-        <!-- <img class="h-6" src="../assets/edit_icon.svg" /> -->
         <icon-base icon-name="edit" :width="16" :height="16">
           <icon-edit />
         </icon-base>
@@ -49,7 +47,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import { mapState } from 'vuex';
 import IconBase from './IconBase.vue';
 import IconMenu from './icons/IconMenu.vue';
 import IconEdit from './icons/IconEdit.vue';
@@ -61,15 +59,19 @@ export default {
     IconEdit,
   },
   data() {
-    return {
-      users: [],
-    };
+    // return {
+    //   users: [],
+    // };
   },
   mounted() {
-    axios.get('https://randomuser.me/api/?results=10').then((response) => {
-      this.$data.users = response.data.results;
-      console.log(response.data);
-    });
+    // axios.get('https://randomuser.me/api/?results=10').then((response) => {
+    //   this.$data.users = response.data.results;
+    //   console.log(response.data);
+    // });
+    this.$store.dispatch('loadUsers');
   },
+  computed: mapState([
+    'users',
+  ]),
 };
 </script>
