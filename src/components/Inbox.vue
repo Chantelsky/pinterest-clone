@@ -32,7 +32,7 @@
             :key="user.first"
             class="flex items-center pb-3 hover:bg-pinterestgray p-"
           >
-            <img :src="`${user.picture.thumbnail}`" class="rounded-full flex" />
+            <img :src="`${state.users.picture.thumbnail}`" class="rounded-full flex" />
             <div class="pl-5 leading-none">
               <p class="font-bold text-base">
                 {{ user.name.first }} {{ user.name.last }}
@@ -47,7 +47,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
 import IconBase from './IconBase.vue';
 import IconMenu from './icons/IconMenu.vue';
 import IconEdit from './icons/IconEdit.vue';
@@ -58,20 +57,13 @@ export default {
     IconMenu,
     IconEdit,
   },
-  data() {
-    // return {
-    //   users: [],
-    // };
-  },
   mounted() {
-    // axios.get('https://randomuser.me/api/?results=10').then((response) => {
-    //   this.$data.users = response.data.results;
-    //   console.log(response.data);
-    // });
-    this.$store.dispatch('loadUsers');
+    this.$store.dispatch('getUsers');
   },
-  computed: mapState([
-    'users',
-  ]),
+  computed: {
+    users() {
+      return this.$store.getters.getUsers;
+    },
+  },
 };
 </script>

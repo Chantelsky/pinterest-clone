@@ -12,6 +12,10 @@ module.exports = {
   },
   rules: {
     'max-len': 0,
+    quotes: [
+      'error',
+      'single',
+    ],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
   },

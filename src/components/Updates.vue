@@ -40,7 +40,7 @@ export default {
         },
         {
           name:
-            "🐶 Dogs, Dog Training Tips and more ideas you've been looking for",
+            '🐶 Dogs, Dog Training Tips and more ideas you\'ve been looking for',
           date: '2d',
           image: [
             'https://images.unsplash.com/photo-1591946614720-90a587da4a36?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
@@ -59,7 +59,7 @@ export default {
         },
         {
           name:
-            "🏠 Home decor, 🛋️ Furniture and more ideas you've been looking for",
+            '🏠 Home decor, 🛋️ Furniture and more ideas you\'ve been looking for',
           date: '5d',
           image: [
             'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',

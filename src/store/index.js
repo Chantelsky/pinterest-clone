@@ -5,21 +5,20 @@ export default createStore({
   state: {
     users: [],
   },
-  mutations: {
-    SET_users(state, users) {
-      state.users = users;
-    },
+  getters: {
+    getUsers: (state) => state.users,
   },
   actions: {
-    loadUsers({ commit }) {
-      axios.get('https://randomuser.me/api/?results').then((response) => response.data)
-        .then((users) => {
-          console.log(users);
-          commit('SET_users', users);
+    getUsers({ commit }) {
+      axios.get('https://randomuser.me/api/?results=10')
+        .then((response) => {
+          commit('SET_USERS', response.data);
         });
     },
   },
-  getters: {
-    users: (state) => state.users,
+  mutations: {
+    SET_USERS(state, users) {
+      state.users = users;
+    },
   },
 });
