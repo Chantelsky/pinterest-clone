@@ -28,7 +28,7 @@
         <p class="text-sm text-darkgray pb-2">Suggested</p>
         <ul>
           <li
-            v-for="user in allUsers"
+            v-for="user in allUsers.results"
             :key="user.name"
             class="flex items-center pb-3 hover:bg-pinterestgray p-"
           >
@@ -36,7 +36,7 @@
             <div class="pl-5 leading-none">
               <p class="font-bold text-base">
                 <!-- {{ users.name.first }} {{ users.name.last }} -->
-                {{ allUsers.results }}
+                {{ name }}
               </p>
               <span class="text-xs text-darkgray">Following</span>
             </div>
