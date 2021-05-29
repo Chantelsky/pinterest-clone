@@ -29,14 +29,13 @@
         <ul>
           <li
             v-for="user in allUsers.results"
-            :key="user.name"
+            :key="user"
             class="flex items-center pb-3 hover:bg-pinterestgray p-"
           >
-            <!-- <img :src="`${state.Users.picture.thumbnail}`" class="rounded-full flex" /> -->
+            <img :src="`${user.picture.thumbnail}`" class="rounded-full flex" />
             <div class="pl-5 leading-none">
               <p class="font-bold text-base">
-                <!-- {{ users.name.first }} {{ users.name.last }} -->
-                {{ name }}
+                {{ user.name.first }} {{ user.name.last }}
               </p>
               <span class="text-xs text-darkgray">Following</span>
             </div>
@@ -53,21 +52,6 @@ import IconBase from './IconBase.vue';
 import IconMenu from './icons/IconMenu.vue';
 import IconEdit from './icons/IconEdit.vue';
 
-// export default {
-//   components: {
-//     IconBase,
-//     IconMenu,
-//     IconEdit,
-//   },
-//   mounted() {
-//     this.$store.dispatch('getUsers');
-//   },
-//   computed: {
-//     users() {
-//       return this.$store.state.users;
-//     },
-//   },
-// };
 export default {
   components: {
     IconBase,

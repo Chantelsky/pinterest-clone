@@ -14,7 +14,6 @@ export default createStore({
         'https://randomuser.me/api/?results=10',
       );
       commit('setUsers', response.data);
-      console.log(response.data.name);
     },
   },
   mutations: {
