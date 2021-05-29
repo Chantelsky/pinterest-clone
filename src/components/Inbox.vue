@@ -28,14 +28,15 @@
         <p class="text-sm text-darkgray pb-2">Suggested</p>
         <ul>
           <li
-            v-for="user in users"
-            :key="user.first"
+            v-for="user in allUsers"
+            :key="user.name"
             class="flex items-center pb-3 hover:bg-pinterestgray p-"
           >
-            <img :src="`${state.users.picture.thumbnail}`" class="rounded-full flex" />
+            <!-- <img :src="`${state.Users.picture.thumbnail}`" class="rounded-full flex" /> -->
             <div class="pl-5 leading-none">
               <p class="font-bold text-base">
-                {{ user.name.first }} {{ user.name.last }}
+                <!-- {{ users.name.first }} {{ users.name.last }} -->
+                {{ allUsers.results }}
               </p>
               <span class="text-xs text-darkgray">Following</span>
             </div>
@@ -47,23 +48,36 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
 import IconBase from './IconBase.vue';
 import IconMenu from './icons/IconMenu.vue';
 import IconEdit from './icons/IconEdit.vue';
 
+// export default {
+//   components: {
+//     IconBase,
+//     IconMenu,
+//     IconEdit,
+//   },
+//   mounted() {
+//     this.$store.dispatch('getUsers');
+//   },
+//   computed: {
+//     users() {
+//       return this.$store.state.users;
+//     },
+//   },
+// };
 export default {
   components: {
     IconBase,
     IconMenu,
     IconEdit,
   },
-  mounted() {
-    this.$store.dispatch('getUsers');
-  },
-  computed: {
-    users() {
-      return this.$store.getters.getUsers;
-    },
+  methods: mapActions(['fetchUsers']),
+  computed: mapGetters(['allUsers']),
+  created() {
+    this.fetchUsers();
   },
 };
 </script>
