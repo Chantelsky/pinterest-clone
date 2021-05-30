@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav-bar @inputData="updateQuery" />
-    <div class="container">
+    <div class="app-container">
       <div v-if="$route.path.includes('/home')">
         <image-card :query="childData" />
       </div>

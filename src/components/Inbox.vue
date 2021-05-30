@@ -25,29 +25,16 @@
         placeholder="Search by name or email address"
       />
       <div class="mt-2">
+        <users/>
         <p class="text-sm text-darkgray pb-2">Suggested</p>
-        <ul>
-          <li
-            v-for="user in allUsers.results"
-            :key="user"
-            class="flex items-center pb-3 hover:bg-pinterestgray p-"
-          >
-            <img :src="`${user.picture.thumbnail}`" class="rounded-full flex" />
-            <div class="pl-5 leading-none">
-              <p class="font-bold text-base">
-                {{ user.name.first }} {{ user.name.last }}
-              </p>
-              <span class="text-xs text-darkgray">Following</span>
-            </div>
-          </li>
-        </ul>
+            <span class="text-xs text-darkgray">Following</span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import Users from './Users.vue';
 import IconBase from './IconBase.vue';
 import IconMenu from './icons/IconMenu.vue';
 import IconEdit from './icons/IconEdit.vue';
@@ -57,11 +44,7 @@ export default {
     IconBase,
     IconMenu,
     IconEdit,
-  },
-  methods: mapActions(['fetchUsers']),
-  computed: mapGetters(['allUsers']),
-  created() {
-    this.fetchUsers();
+    Users,
   },
 };
 </script>
