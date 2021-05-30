@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="absolute right-0 -top-4.5 bg-white shadow-xl rounded-lg p-5 text-left w-1/5"
-  >
+  <div class="absolute right-0 -top-4.5 bg-white shadow-xl rounded-lg p-5 text-left w-1/5">
     <div class="flex items-center">
       <div class="flex-grow"><p class="font-bold text-center">Inbox</p></div>
       <button class="mr-4">
@@ -25,9 +23,10 @@
         placeholder="Search by name or email address"
       />
       <div class="mt-2">
-        <users/>
         <p class="text-sm text-darkgray pb-2">Suggested</p>
-            <span class="text-xs text-darkgray">Following</span>
+        <users />
+        <!--TODO: Sit directly under each user -->
+        <span class="text-xs text-darkgray">Following</span>
       </div>
     </div>
   </div>

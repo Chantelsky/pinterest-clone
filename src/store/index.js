@@ -11,6 +11,7 @@ export default createStore({
   actions: {
     async fetchUsers({ commit }) {
       const response = await axios.get(
+        // TODO: user page only needs 1 result.
         'https://randomuser.me/api/?results=10',
       );
       commit('setUsers', response.data);
