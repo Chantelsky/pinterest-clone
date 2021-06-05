@@ -19,17 +19,18 @@ export default createStore({
     },
     async fetchUsers({ commit }) {
       const response = await axios.get(
-        'https://randomuser.me/api/',
+        'https://randomuser.me/api',
       );
       commit('setUsers', response.data);
     },
+
   },
   mutations: {
     setRandomUsers(state, randomUsers) {
       state.randomUsers = randomUsers;
     },
     setUsers(state, users) {
-      state.allUsers = users;
+      state.users = users;
     },
   },
 });
