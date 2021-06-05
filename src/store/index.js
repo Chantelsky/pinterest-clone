@@ -3,23 +3,33 @@ import { createStore } from 'vuex';
 
 export default createStore({
   state: {
+    randomUsers: [],
     users: [],
   },
   getters: {
+    allRandomUsers: (state) => state.randomUsers,
     allUsers: (state) => state.users,
   },
   actions: {
+    async fetchRandomUsers({ commit }) {
+      const response = await axios.get(
+        'https://randomuser.me/api/?results=15',
+      );
+      commit('setRandomUsers', response.data);
+    },
     async fetchUsers({ commit }) {
       const response = await axios.get(
-        // TODO: user page only needs 1 result.
-        'https://randomuser.me/api/?results=10',
+        'https://randomuser.me/api/',
       );
       commit('setUsers', response.data);
     },
   },
   mutations: {
+    setRandomUsers(state, randomUsers) {
+      state.randomUsers = randomUsers;
+    },
     setUsers(state, users) {
-      state.users = users;
+      state.allUsers = users;
     },
   },
 });
