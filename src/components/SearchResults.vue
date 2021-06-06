@@ -1,5 +1,6 @@
 <template>
-  <div class="grid grid-cols-7 gap-4 bg-pink w-10 h-10">
+  <!-- TODO: this requires more work -->
+  <div class="grid grid-cols-7 gap-4 w-10 h-10">
     <div>1</div>
     <div>2</div>
     <div>3</div>

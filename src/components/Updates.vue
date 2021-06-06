@@ -28,6 +28,7 @@
 export default {
   data() {
     return {
+      // TODO: vuex implementation to make images dynamic
       contentUpdates: [
         {
           name: 'We think you might like these 17 ideas',

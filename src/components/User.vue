@@ -24,7 +24,7 @@ import { mapGetters, mapActions } from 'vuex';
 export default {
   data() {
     return {
-      followers: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      followers: [2, 4, 6, 8, 10, 12, 14, 16, 18],
     };
   },
   methods: {

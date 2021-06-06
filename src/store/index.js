@@ -23,7 +23,6 @@ export default createStore({
       );
       commit('setUsers', response.data);
     },
-
   },
   mutations: {
     setRandomUsers(state, randomUsers) {

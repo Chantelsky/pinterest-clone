@@ -5,6 +5,7 @@
 </template>
 
 <script>
+// TODO: work on this.
 export default {
   props: {
     query: {
